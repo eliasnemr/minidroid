@@ -27,9 +27,10 @@ public class MainActivity extends AppCompatActivity {
 
         mMainLink = this;
 
+
+
         // setting btn listeners
         this.setDAPPbtn();
-        this.setHelpBtn();
 
     }
 
@@ -41,22 +42,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://127.0.0.1:21000/"));
-                startActivity(intent);
-                // webview
-//                Intent intent = new Intent(MainActivity.this, WebViewActivity.class);
-//                startActivity(intent);
-            }
-        });
-    }
-
-    public void setHelpBtn() {
-        btnHelp = findViewById(R.id.btn_help);
-        // listener to open helpActivity
-        btnHelp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent intent = new Intent(MainActivity.this, HelpActivity.class);
                 startActivity(intent);
             }
         });

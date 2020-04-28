@@ -19,8 +19,6 @@
         </activity>
         <activity android:name=".WebViewActivity">
         </activity>
-        <activity android:name=".HelpActivity">
-        </activity>
 
         <service
             android:name=".NodeService"

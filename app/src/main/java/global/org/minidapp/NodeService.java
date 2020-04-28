@@ -18,6 +18,7 @@ import androidx.core.app.NotificationCompat;
 import org.minima.NativeListener;
 import org.minima.Start;
 import org.minima.objects.TxPOW;
+import org.minima.system.Main;
 import org.minima.system.brains.ConsensusHandler;
 import org.minima.utils.messages.Message;
 import org.w3c.dom.Node;
@@ -47,9 +48,12 @@ public class NodeService extends Service {
     public void onCreate() {
         super.onCreate();
 
-        //Start Minima
         mNodeService = this;
+
+        //Start Minima
         mStart = new Start();
+        mStart.fireStarter(getFilesDir().getAbsolutePath());
+
 
         Log.d("Minima Call:", "" + "Minima is running");
         Toast.makeText(mNodeService, "", Toast.LENGTH_SHORT).show();
@@ -76,6 +80,10 @@ public class NodeService extends Service {
     public int onStartCommand(Intent intent, int flags, int startId) {
         // Create our notification channel here & add channel to Manager's list
         createNotificationChannel();
+
+        Intent NotificationIntent = new Intent(this, MainActivity.class);
+        mPendingIntent = PendingIntent.getActivity(this, 0
+                , NotificationIntent, 0);
 
         // Create our notification
         mNotificationBuilder = new NotificationCompat.Builder(this, CHANNEL_ID)

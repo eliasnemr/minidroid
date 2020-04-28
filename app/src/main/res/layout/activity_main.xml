@@ -12,26 +12,22 @@
 
 
     <ImageView
-        android:layout_width="150px"
-        android:layout_height="150px"
+        android:layout_width="300px"
+        android:layout_height="300px"
         android:src="@drawable/ic_minima"
         android:contentDescription="@string/content_description"
-        android:paddingBottom="50px"
+        android:paddingBottom="80px"
         />
 
     <Button
         android:id="@+id/btn_minidapp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="?android:attr/borderlessButtonStyle"
+        android:layout_height="120px"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/roundbutton"
+        android:padding="20px"
         android:text="@string/btn_text"/>
 
-    <Button
-        android:id="@+id/btn_help"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="?android:attr/borderlessButtonStyle"
-        android:text="@string/btn2_text"/>
 
 
 
