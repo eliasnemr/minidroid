@@ -83,7 +83,7 @@ public class NodeService extends Service {
 
         Intent NotificationIntent = new Intent(this, MainActivity.class);
         mPendingIntent = PendingIntent.getActivity(this, 0
-                , NotificationIntent, 0);
+                , NotificationIntent, PendingIntent.FLAG_NO_CREATE);
 
         // Create our notification
         mNotificationBuilder = new NotificationCompat.Builder(this, CHANNEL_ID)
